@@ -1,158 +1,382 @@
 <!DOCTYPE html>
 <html lang="sl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Odvetnik Miha Korenjak</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Odvetnik Miha Korenjak</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body id="vrh">
-  <div class="page-shell">
-    <header class="hero">
-      <nav class="topbar">
-        <div class="brand">
-          <span class="brand-mark"></span>
-          <span>Odvetnik Miha Korenjak</span>
-        </div>
-        <div class="nav-links">
-          <a href="#podrocja">Podrocja</a>
-          <a href="#predstavitev">Predstavitev</a>
-          <a href="#stik">Stik</a>
-        </div>
-      </nav>
+<body>
 
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Odvetniska pisarna</p>
-          <h1>Jasna pravna podpora z mirno, samozavestno prisotnostjo.</h1>
-          <p class="lead">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae
-            magna vel lorem interdum pharetra. Sed consequat, sapien nec finibus
-            posuere, risus nisi vulputate sem, vitae viverra risus lorem id nibh.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#podrocja">Pravna podrocja</a>
-            <a class="button button-secondary" href="#stik">Naroci posvet</a>
-          </div>
-        </div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
 
-        <div class="hero-visual">
-          <div class="frame frame-large">
-            <span>Portret odvetnika</span>
-          </div>
-          <div class="floating-note">
-            <strong>01</strong>
-            <p>Diskretnost, natancnost in premisljena pravna strategija.</p>
-          </div>
+<!-- Navigation -->
+<nav id="navbar">
+  <div class="logo">
+    <span class="logo-name">MIHA KORENJAK</span>
+    <span class="logo-sub">Odvetnik</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#storitve">Storitve</a></li>
+    <li><a href="#sodelovanje">Sodelovanje</a></li>
+    <li><a href="#pristop">Pristop</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <a href="#kontakt" class="nav-cta">Dogovorite posvet</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Odvetnik · Ljubljana</div>
+    <h1 class="hero-title">
+      Pravna<br>
+      <em>podpora</em><br>
+      z jasnim ciljem.
+    </h1>
+    <p class="hero-desc">
+      Odvetnik Miha Korenjak nudi strokovno, diskretno in osebno pravno pomoč posameznikom ter podjetjem pri pomembnih odločitvah, sporih in postopkih.
+    </p>
+    <div class="hero-actions">
+      <a href="#kontakt" class="btn-primary"><span>Stopite v stik</span><span>→</span></a>
+      <a href="#storitve" class="btn-secondary">Področja dela</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-container">
+      <div class="hero-img-bg"></div>
+      <svg class="scales-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="90" stroke="#c9a84c" stroke-width="0.5"/>
+        <circle cx="100" cy="100" r="70" stroke="#c9a84c" stroke-width="0.3"/>
+        <circle cx="100" cy="100" r="50" stroke="#c9a84c" stroke-width="0.5"/>
+        <line x1="100" y1="10" x2="100" y2="40" stroke="#c9a84c" stroke-width="1"/>
+        <line x1="60" y1="40" x2="140" y2="40" stroke="#c9a84c" stroke-width="1"/>
+        <line x1="60" y1="40" x2="60" y2="80" stroke="#c9a84c" stroke-width="0.8"/>
+        <line x1="140" y1="40" x2="140" y2="80" stroke="#c9a84c" stroke-width="0.8"/>
+        <ellipse cx="60" cy="83" rx="20" ry="5" stroke="#c9a84c" stroke-width="0.8"/>
+        <ellipse cx="140" cy="83" rx="20" ry="5" stroke="#c9a84c" stroke-width="0.8"/>
+        <line x1="100" y1="40" x2="100" y2="190" stroke="#c9a84c" stroke-width="0.8"/>
+        <polygon points="90,185 110,185 105,195 95,195" stroke="#c9a84c" stroke-width="0.5" fill="none"/>
+        <line x1="40" y1="105" x2="80" y2="105" stroke="#c9a84c" stroke-width="0.3" stroke-dasharray="2,4"/>
+        <line x1="120" y1="105" x2="160" y2="105" stroke="#c9a84c" stroke-width="0.3" stroke-dasharray="2,4"/>
+      </svg>
+    </div>
+    <div class="hero-stat-grid">
+      <div class="hero-stat">
+        <span class="hero-stat-num">1:1</span>
+        <span class="hero-stat-label">Osebni pristop</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">24h</span>
+        <span class="hero-stat-label">Prvi odziv</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">100%</span>
+        <span class="hero-stat-label">Diskretnost</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">4</span>
+        <span class="hero-stat-label">Področja dela</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-line">
+    <div class="scroll-line-bar"></div>
+    <span>Odkrijte več</span>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- Approach -->
+<section class="approach" id="pristop">
+  <div class="reveal">
+    <div class="section-label">Pristop</div>
+    <h2 class="section-title">Pravo z <em>osebno odgovornostjo</em></h2>
+  </div>
+  <div class="reveal">
+    <p class="approach-text">
+      Vsaka zadeva zahteva natančno razumevanje okoliščin, realno oceno možnosti in jasen dogovor o naslednjih korakih. Miha Korenjak pri delu združuje strokovnost, neposredno komunikacijo in skrb za interese stranke.
+    </p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title">Diskretnost</div>
+        <div class="pillar-text">Vaši podatki, vprašanja in dokumenti so obravnavani z najvišjo stopnjo zaupnosti.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title">Jasnost</div>
+        <div class="pillar-text">Pravni položaj, tveganja in možnosti so predstavljeni razumljivo, brez nepotrebnega zapletanja.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title">Predanost</div>
+        <div class="pillar-text">Vsaka zadeva je vodena z odgovornostjo, natančnostjo in osredotočenostjo na najboljšo možno rešitev.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- Services -->
+<section class="services" id="storitve">
+  <div class="services-header reveal">
+    <div>
+      <div class="section-label">Področja dela</div>
+      <h2 class="section-title">Pravna <em>pomoč</em></h2>
+    </div>
+    <a href="#kontakt" class="btn-secondary">Pošljite vprašanje →</a>
+  </div>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none">
+        <rect x="8" y="6" width="32" height="36" rx="1" stroke="#c9a84c" stroke-width="1.5"/>
+        <line x1="16" y1="16" x2="32" y2="16" stroke="#c9a84c" stroke-width="1.5"/>
+        <line x1="16" y1="22" x2="32" y2="22" stroke="#c9a84c" stroke-width="1.5"/>
+        <line x1="16" y1="28" x2="24" y2="28" stroke="#c9a84c" stroke-width="1.5"/>
+      </svg>
+      <div class="service-title">Gospodarsko pravo</div>
+      <div class="service-text">Pravna podpora podjetjem pri pogodbah, poslovnih razmerjih, izterjavah, odgovornosti in reševanju gospodarskih sporov.</div>
+      <a href="#kontakt" class="service-link">Vprašajte za posvet <span class="service-link-arrow">→</span></a>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="18" r="10" stroke="#c9a84c" stroke-width="1.5"/>
+        <path d="M8 42c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="#c9a84c" stroke-width="1.5"/>
+      </svg>
+      <div class="service-title">Delovno pravo</div>
+      <div class="service-text">Svetovanje in zastopanje pri pogodbah o zaposlitvi, odpovedih, delovnih sporih ter ureditvi pravic in obveznosti.</div>
+      <a href="#kontakt" class="service-link">Vprašajte za posvet <span class="service-link-arrow">→</span></a>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none">
+        <path d="M24 6L6 16v4h36v-4L24 6z" stroke="#c9a84c" stroke-width="1.5"/>
+        <rect x="10" y="20" width="4" height="18" stroke="#c9a84c" stroke-width="1.5"/>
+        <rect x="22" y="20" width="4" height="18" stroke="#c9a84c" stroke-width="1.5"/>
+        <rect x="34" y="20" width="4" height="18" stroke="#c9a84c" stroke-width="1.5"/>
+        <line x1="6" y1="38" x2="42" y2="38" stroke="#c9a84c" stroke-width="1.5"/>
+      </svg>
+      <div class="service-title">Nepremičninsko pravo</div>
+      <div class="service-text">Pomoč pri nakupu, prodaji, najemu, stvarnopravnih vprašanjih, zemljiški knjigi in nepremičninskih sporih.</div>
+      <a href="#kontakt" class="service-link">Vprašajte za posvet <span class="service-link-arrow">→</span></a>
+    </div>
+    <div class="service-card">
+      <svg class="service-icon" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="16" stroke="#c9a84c" stroke-width="1.5"/>
+        <line x1="24" y1="8" x2="24" y2="24" stroke="#c9a84c" stroke-width="1.5"/>
+        <line x1="24" y1="24" x2="34" y2="30" stroke="#c9a84c" stroke-width="1.5"/>
+        <circle cx="24" cy="24" r="2" fill="#c9a84c"/>
+      </svg>
+      <div class="service-title">Kazensko pravo</div>
+      <div class="service-text">Zagovor, pravno svetovanje in zastopanje v predkazenskih ter kazenskih postopkih z mirno in odločno strategijo.</div>
+      <a href="#kontakt" class="service-link">Vprašajte za posvet <span class="service-link-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Quote -->
+<section class="quote-section reveal">
+  <span class="quote-mark">"</span>
+  <p class="quote-text">Dobra pravna pomoč se začne z razumevanjem človeka, ne samo primera.</p>
+  <span class="quote-author">Odvetnik Miha Korenjak</span>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- Collaboration -->
+<section class="team" id="sodelovanje">
+  <div class="reveal">
+    <div class="section-label">Sodelovanje</div>
+    <h2 class="section-title">Kako poteka <em>postopek</em></h2>
+  </div>
+  <div class="team-grid reveal">
+    <div class="team-card">
+      <div class="team-photo">
+        <span class="team-initials">01</span>
+        <div class="team-overlay"></div>
+      </div>
+      <div class="team-info">
+        <div class="team-name">Prvi pogovor</div>
+        <div class="team-title-role">Razumevanje zadeve</div>
+        <div class="team-desc">V uvodnem pogovoru predstavite okoliščine, dokumente in cilj, ki ga želite doseči.</div>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo">
+        <span class="team-initials">02</span>
+        <div class="team-overlay"></div>
+      </div>
+      <div class="team-info">
+        <div class="team-name">Ocena možnosti</div>
+        <div class="team-title-role">Strategija in tveganja</div>
+        <div class="team-desc">Prejmete jasno razlago pravnega položaja, predlaganih korakov, stroškov in možnih izidov.</div>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-photo">
+        <span class="team-initials">03</span>
+        <div class="team-overlay"></div>
+      </div>
+      <div class="team-info">
+        <div class="team-name">Zastopanje</div>
+        <div class="team-title-role">Odločnost in komunikacija</div>
+        <div class="team-desc">Postopek je voden pregledno, z rednim obveščanjem in usmerjenostjo v učinkovito rešitev.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- Contact -->
+<section class="contact" id="kontakt">
+  <div class="contact-left reveal">
+    <div class="section-label">Kontakt</div>
+    <h2 class="section-title">Stopite <em>v stik</em></h2>
+    <p class="contact-intro">
+      Za pravni posvet pokličite, pišite ali pošljite kratko sporočilo z opisom zadeve. Odgovor boste prejeli v najkrajšem možnem času.
+    </p>
+    <div class="contact-details">
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M2 2h12v10H2V2z" stroke="#c9a84c" stroke-width="1"/>
+            <path d="M2 2l6 5 6-5" stroke="#c9a84c" stroke-width="1"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-item-label">E-pošta</div>
+          <div class="contact-item-value">info@odvetnik-korenjak.si</div>
         </div>
       </div>
-    </header>
-
-    <main>
-      <section class="section statement" id="podrocja">
-        <div class="section-heading">
-          <p class="eyebrow">Pravna podrocja</p>
-          <h2>Celovita podpora za posameznike in podjetja.</h2>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M2 2a1 1 0 011-1h2.5l1 3-1.5 1.5A11 11 0 0010 10.5l1.5-1.5 3 1V12a1 1 0 01-1 1C5.373 13 2 9.627 2 5V2z" stroke="#c9a84c" stroke-width="1"/>
+          </svg>
         </div>
-        <div class="statement-grid">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non lectus
-            vitae arcu posuere luctus. Integer posuere, orci nec volutpat tincidunt,
-            justo sapien efficitur sem, vel tincidunt elit elit eget tellus.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            elementum, justo in suscipit posuere, turpis nibh varius erat, eget
-            aliquet lorem libero sit amet nunc.
-          </p>
+        <div>
+          <div class="contact-item-label">Telefon</div>
+          <div class="contact-item-value">+386 1 234 56 78</div>
         </div>
-      </section>
-
-      <section class="section split-showcase" id="predstavitev">
-        <div class="showcase-copy">
-          <p class="eyebrow">Predstavitev</p>
-          <h2>Prostor za fotografije pisarne, dela in profesionalne predstavitve.</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque at
-            fermentum eros. Nam dignissim, erat ac tempus blandit, odio lacus
-            convallis turpis, sit amet posuere purus metus a est.
-          </p>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 1a5 5 0 015 5c0 3.5-5 9-5 9S3 9.5 3 6a5 5 0 015-5z" stroke="#c9a84c" stroke-width="1"/>
+            <circle cx="8" cy="6" r="1.5" stroke="#c9a84c" stroke-width="1"/>
+          </svg>
         </div>
-
-        <div class="showcase-grid">
-          <div class="frame frame-tall">
-            <span>Fotografija pisarne</span>
-          </div>
-          <div class="frame frame-wide">
-            <span>Sestanek s stranko</span>
-          </div>
-          <div class="frame frame-small">
-            <span>Pravni dokumenti</span>
-          </div>
-          <div class="frame frame-small alt">
-            <span>Detajl interierja</span>
-          </div>
+        <div>
+          <div class="contact-item-label">Naslov</div>
+          <div class="contact-item-value">Ulica XIV. divizije 12<br>3000 Celje</div>
         </div>
-      </section>
-
-      <section class="section metrics">
-        <div class="metric-card">
-          <span>Zaupanje</span>
-          <strong>01</strong>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        <div class="metric-card">
-          <span>Izkusnje</span>
-          <strong>02</strong>
-          <p>Integer imperdiet massa nec risus finibus, ac feugiat sapien rutrum.</p>
-        </div>
-        <div class="metric-card">
-          <span>Strategija</span>
-          <strong>03</strong>
-          <p>Vestibulum volutpat eros eu sem interdum, non luctus lorem vulputate.</p>
-        </div>
-      </section>
-
-      <section class="section quote-band">
-        <p>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed
-          dui in mauris volutpat luctus non vitae lorem."
-        </p>
-      </section>
-
-      <section class="section contact" id="stik">
-        <div class="contact-copy">
-          <p class="eyebrow">Stik</p>
-          <h2>Dogovorite se za zaupni posvet in predstavite svoj primer.</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at sapien sed
-            sem eleifend volutpat non vitae purus. Vestibulum ante ipsum primis in
-            faucibus orci luctus et ultrices posuere cubilia curae.
-          </p>
-        </div>
-
-        <form class="contact-form">
-          <label>
-            Ime
-            <input type="text" placeholder="Tvoje ime">
-          </label>
-          <label>
-            E-posta
-            <input type="email" placeholder="ime@primer.si">
-          </label>
-          <label>
-            Sporocilo
-            <textarea rows="5" placeholder="Na kratko opisi idejo"></textarea>
-          </label>
-          <button type="submit" class="button button-primary">Poslji</button>
-        </form>
-      </section>
-    </main>
+      </div>
+    </div>
   </div>
+  <div class="reveal">
+    <div class="contact-form">
+      <div class="form-group">
+        <label class="form-label">Vaše ime</label>
+        <input type="text" class="form-input" placeholder="Ime in priimek">
+      </div>
+      <div class="form-group">
+        <label class="form-label">E-pošta</label>
+        <input type="email" class="form-input" placeholder="vasmail@domena.si">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Področje</label>
+        <select class="form-input" style="appearance:none; cursor:pointer;">
+          <option value="" style="background:#111">Izberite področje</option>
+          <option style="background:#111">Gospodarsko pravo</option>
+          <option style="background:#111">Delovno pravo</option>
+          <option style="background:#111">Nepremičninsko pravo</option>
+          <option style="background:#111">Kazensko pravo</option>
+          <option style="background:#111">Drugo</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Vaše sporočilo</label>
+        <textarea class="form-input" rows="5" placeholder="Opišite vašo zadevo..."></textarea>
+      </div>
+      <button class="form-submit" onclick="alert('Hvala za vaše sporočilo! Odgovor boste prejeli v najkrajšem možnem času.')">
+        <span>Pošlji sporočilo →</span>
+      </button>
+    </div>
+  </div>
+</section>
 
-  <a class="back-to-top" href="#vrh" aria-label="Nazaj na vrh">Vrh</a>
+<!-- Footer -->
+<footer>
+  <div>
+    <div class="logo-name" style="font-family:'Playfair Display',serif;font-size:16px;color:#f8f5ef;letter-spacing:2px;">MIHA KORENJAK</div>
+    <div class="footer-copy" style="margin-top:8px;">© 2026 Vse pravice pridržane</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="#">Zasebnost</a></li>
+    <li><a href="#">Pogoji</a></li>
+    <li><a href="#">Sitemap</a></li>
+  </ul>
+  <div class="footer-copy">Odvetnik · Ljubljana, Slovenija</div>
+</footer>
+
+<script>
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left = mx + 'px';
+  cursor.style.top = my + 'px';
+});
+
+function animateRing() {
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  ring.style.left = rx + 'px';
+  ring.style.top = ry + 'px';
+  requestAnimationFrame(animateRing);
+}
+animateRing();
+
+document.querySelectorAll('a, button, .service-card, .pillar, .team-card').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.classList.add('expand');
+    ring.classList.add('expand');
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.classList.remove('expand');
+    ring.classList.remove('expand');
+  });
+});
+
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12 });
+reveals.forEach(r => observer.observe(r));
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
 </body>
 </html>

@@ -66,7 +66,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 28px 60px;
+  padding: 24px 60px;
   transition: background 0.5s, padding 0.5s;
 }
 nav.scrolled {
@@ -77,11 +77,12 @@ nav.scrolled {
 }
 .logo { display: flex; align-items: center; }
 .logo-img {
-  height: 44px;
+  height: 72px;
   width: auto;
-  filter: invert(1) brightness(1.05);
+  filter: invert(1) brightness(1.1);
+  transition: height 0.5s;
 }
-nav.scrolled .logo-img { height: 36px; transition: height 0.5s; }
+nav.scrolled .logo-img { height: 48px; }
 .nav-links { display: flex; gap: 36px; list-style: none; }
 .nav-links a {
   font-family: 'Cormorant Garamond', serif;
@@ -366,7 +367,7 @@ footer { background: var(--black-soft); border-top: 1px solid rgba(255,255,255,0
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
-  nav { padding: 22px 36px; }
+  nav { padding: 16px 36px; }
   nav.scrolled { padding: 14px 36px; }
   .nav-links, .nav-cta { display: none; }
   .hamburger { display: flex; }
@@ -384,6 +385,8 @@ footer { background: var(--black-soft); border-top: 1px solid rgba(255,255,255,0
   .about { grid-template-columns: 1fr; padding: 80px 36px; gap: 48px; }
   .about-photo-frame { aspect-ratio: 4/3; max-height: 360px; }
   .about-white-accent { display: none; }
+  .logo-img { height: 52px; }
+  nav.scrolled .logo-img { height: 40px; }
 
   .services { padding: 80px 36px; }
   .services-header { flex-direction: column; align-items: flex-start; gap: 20px; }
@@ -422,18 +425,55 @@ footer { background: var(--black-soft); border-top: 1px solid rgba(255,255,255,0
 }
 
 .footer-logo-img {
-  height: 36px;
+  height: 52px;
   width: auto;
-  filter: invert(1) brightness(1.05);
-  opacity: 0.8;
+  filter: invert(1) brightness(1.1);
+  opacity: 1;
   margin-bottom: 8px;
   display: block;
 }
 .mobile-logo-img {
-  height: 52px;
+  height: 60px;
   width: auto;
   filter: invert(1) brightness(1.05);
   margin-bottom: 8px;
+}
+
+/* BACK TO TOP */
+.back-to-top {
+  position: fixed;
+  bottom: 36px;
+  right: 36px;
+  width: 48px;
+  height: 48px;
+  background: var(--accent);
+  color: var(--black);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.4s ease, transform 0.4s ease, background 0.3s;
+  z-index: 90;
+}
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  background: rgba(220,220,220,1);
+}
+.back-to-top svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--black);
+  stroke-width: 2;
+  fill: none;
+}
+@media (max-width: 600px) {
+  .back-to-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
 }
 </style>
 </head>
@@ -441,6 +481,11 @@ footer { background: var(--black-soft); border-top: 1px solid rgba(255,255,255,0
 
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Back to top -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Nazaj na vrh">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
 
 <!-- Mobile menu -->
 <div class="mobile-menu" id="mobileMenu">
@@ -770,6 +815,13 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     closeMobile();
   });
 });
+
+/* Back to top */
+const btt = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  btt.classList.toggle('visible', window.scrollY > 400);
+});
+
 </script>
 </body>
 </html>

@@ -62,14 +62,18 @@ h2{font-weight:400;font-size:clamp(32px,4vw,52px);line-height:1.12;margin-bottom
 .quote cite{font-style:normal;font-size:16px;letter-spacing:3px;text-transform:uppercase;color:var(--mute)}
 .contact{border-top:1px solid var(--ink)}
 .contact p.in{max-width:52ch;color:var(--mute);margin-bottom:50px}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--ink)}
-.card{padding:34px 28px;border-right:1px solid var(--line);text-decoration:none;transition:background .3s,color .3s}
+.cards{display:grid;grid-template-columns:minmax(max-content,1.2fr) .85fr 1fr 1.1fr;gap:0;border:1px solid var(--ink)}
+.card{min-width:0;padding:34px 24px;border-right:1px solid var(--line);text-decoration:none;transition:background .3s,color .3s}
 .card:last-child{border-right:0}
 a.card:hover{background:var(--ink);color:#fff}
 a.card:hover dt{color:#bbb}
 .card svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.2;margin-bottom:22px}
 .card dt{font-size:14px;letter-spacing:3px;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
 .card dd{font-size:22px;line-height:1.35}
+.card-email dd{font-size:clamp(18px,5.2vw,22px);white-space:nowrap}
+.office-hours{display:grid;gap:16px;margin-top:12px}
+.office-hours .day{display:block;font-size:17px;font-weight:500;color:var(--mute);margin-bottom:4px}
+.office-hours .time{display:block;font-size:20px;line-height:1.5;white-space:nowrap;font-variant-numeric:tabular-nums}
 footer{border-top:1px solid var(--ink);padding:34px 0 calc(34px + env(safe-area-inset-bottom,0px));font-size:16px;color:var(--mute)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 :focus-visible{outline:2px solid var(--ink);outline-offset:4px}
@@ -86,7 +90,8 @@ section{padding:68px 0}
 .areas{grid-template-columns:1fr}.areas li:nth-last-child(-n+2){border-bottom:0}.areas li:last-child{border-bottom:1px solid #cfcfcd}
 .cards{grid-template-columns:1fr 1fr}.card:nth-child(2){border-right:0}.card:nth-child(-n+2){border-bottom:1px solid var(--line)}
 .brand .mk{font-size:62px}.brand .nm{font-size:26px}.brand .bar{height:54px}header{padding-top:calc(20px + env(safe-area-inset-top,0px));padding-bottom:20px}}
-@media(max-width:520px){.cards{grid-template-columns:1fr}.card{border-right:0!important;border-bottom:1px solid var(--line)}.card:last-child{border-bottom:0}.areas li{font-size:23px}}
+@media(max-width:640px){.cards{grid-template-columns:1fr}.card{border-right:0;border-bottom:1px solid var(--line)}.card:last-child{border-bottom:0}}
+@media(max-width:520px){.areas li{font-size:23px}}
 @media(prefers-reduced-motion:reduce){.hero-text>*{animation:none;opacity:1;transform:none}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -139,10 +144,13 @@ section{padding:68px 0}
 <h2>Stopite v stik</h2>
 <p class="in">Z veseljem se dogovorim za sestanek ali pogovor po telefonu.</p>
 <dl class="cards">
-<a class="card" href="mailto:primer@domena.si"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="1"/><path d="M2.5 6l9.5 7 9.5-7"/></svg><dt>E-pošta</dt><dd>odvetnik.korenjak@t-2.si</dd></a>
+<a class="card card-email" href="mailto:odvetnik.korenjak@t-2.si"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="1"/><path d="M2.5 6l9.5 7 9.5-7"/></svg><dt>E-pošta</dt><dd>odvetnik.korenjak@t-2.si</dd></a>
 <a class="card" href="tel:+38631234567"><svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v4a2 2 0 01-2 2C10 20 4 14 3 5a2 2 0 012-2z"/></svg><dt>Telefon</dt><dd>03 292 70 10</dd></a>
 <a class="card" href="https://www.google.com/maps/search/?api=1&query=Ulica+XIV.+divizije+12+3000+Celje" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><dt>Naslov</dt><dd>Ulica XIV. divizije 12,<br>3000 Celje</dd></a>
-<div class="card"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><dt>Uradne ure</dt><dd>Ponedeljek in petek: 9:00 – 12:00 <br>Sreda: 9:00 - 12:00 in 14:00 - 17:00 </br></dd></div>
+<div class="card"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><dt>Uradne ure</dt><dd class="office-hours">
+<div><span class="day">Ponedeljek in petek</span><span class="time">9:00 – 12:00</span></div>
+<div><span class="day">Sreda</span><span class="time">9:00 – 12:00</span><span class="time">14:00 – 17:00</span></div>
+</dd></div>
 </dl>
 </div></section>
 </main>

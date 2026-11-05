@@ -6,12 +6,12 @@
 <title>Odvetnik Miha Korenjak</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fff;--ink:#111;--mute:#6b6b6b;--line:#dcdcdc;--grey:#f5f5f4;color-scheme:light}
+:root{--bg:#fff;--ink:#111;--mute:#6b6b6b;--line:#dcdcdc;--grey:#f5f5f4;--gutter:clamp(20px,4vw,96px);color-scheme:light}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;font-size:19px;line-height:1.7;overflow-x:hidden}
+body{background:var(--bg);color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(19px,1.2vw,24px);line-height:1.7}
 a{color:inherit}
-.wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+.wrap{width:calc(100% - var(--gutter)*2);max-width:2160px;margin:0 auto}
 header{position:relative;z-index:10;background:#fff;padding:calc(28px + env(safe-area-inset-top,0px)) 0 28px;border-bottom:1px solid var(--ink)}
 header .wrap{display:flex;align-items:center;justify-content:center;gap:20px}
 .brand{display:flex;align-items:center;gap:16px;text-decoration:none}
@@ -22,20 +22,20 @@ nav{display:flex;gap:34px}
 nav a{font-size:16px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;padding:4px 0;border-bottom:1px solid transparent;transition:border-color .25s}
 nav a:hover{border-color:var(--ink)}
 .hero{position:relative;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;min-height:620px}
-.hero-text{padding:80px 0}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,4vw,80px);align-items:center;min-height:clamp(520px,38vw,760px)}
+.hero-text{padding:clamp(56px,5vw,112px) 0}
 .hero-text>*{opacity:0;transform:translateY(14px);animation:in .9s ease forwards}
 .hero-text>:nth-child(2){animation-delay:.15s}.hero-text>:nth-child(3){animation-delay:.3s}.hero-text>:nth-child(4){animation-delay:.45s}
 @keyframes in{to{opacity:1;transform:none}}
-h1{font-weight:400;font-size:44px;line-height:1.04;letter-spacing:-.5px}
+h1{font-weight:400;font-size:clamp(38px,4vw,72px);line-height:1.08;letter-spacing:-.5px}
 .hero .name{margin-top:28px;font-size:28px;font-weight:500;font-style:italic}
-.hero .lead{margin-top:12px;max-width:440px;color:var(--mute)}
+.hero .lead{margin-top:12px;max-width:42ch;color:var(--mute)}
 .hero-cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
 .btn{display:inline-block;font-size:16px;letter-spacing:3px;text-transform:uppercase;text-decoration:none;padding:14px 28px;border:1px solid var(--ink);transition:background .25s,color .25s}
 .btn.solid{background:var(--ink);color:#fff}.btn.solid:hover{background:#fff;color:var(--ink)}
 .btn.line:hover{background:var(--ink);color:#fff}
-.hero-art{align-self:stretch;display:flex;justify-content:flex-end;align-items:center;margin-right:-70px}
-.hero-art img{display:block;height:100%;max-height:680px;width:auto;max-width:100%;object-fit:contain;object-position:right center}
+.hero-art{min-width:0;align-self:stretch;display:flex;justify-content:flex-end;align-items:center}
+.hero-art img{display:block;width:100%;max-width:440px;height:auto;max-height:680px;object-fit:contain;object-position:right center}
 .stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
 .stats div{padding:34px 20px;text-align:center;border-right:1px solid var(--line)}
@@ -44,15 +44,17 @@ h1{font-weight:400;font-size:44px;line-height:1.04;letter-spacing:-.5px}
 .stats span{color:var(--mute);font-size:16px;letter-spacing:2px;text-transform:uppercase}
 section{padding:100px 0}
 h2{font-weight:400;font-size:clamp(32px,4vw,52px);line-height:1.12;margin-bottom:30px}
-.about-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:80px;align-items:start}
+.about-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,120px);align-items:start}
+.about-grid>div:last-child{align-self:center}
 .about p{margin-bottom:20px;max-width:60ch}
+.about p:last-child{margin-bottom:0}
 .about p:first-of-type::first-letter{font-size:3.4em;float:left;line-height:.82;padding:6px 10px 0 0;font-style:italic}
-.photo{margin-top:34px;aspect-ratio:3/4;max-width:360px;border:1px solid var(--line);background:var(--grey);display:flex;align-items:center;justify-content:center;text-align:center;color:var(--mute);font-style:italic;font-size:18px;overflow:hidden}
-.photo img{width:100%;height:100%;object-fit:cover}
+.photo{margin-top:34px;width:100%;max-width:440px;aspect-ratio:3/4;border:1px solid var(--line);background:var(--grey);overflow:hidden}
+.photo img{display:block;width:100%;height:100%;object-fit:cover}
 .areas-sec{background:var(--grey)}
 .areas-intro{max-width:66ch;color:var(--mute);margin-bottom:48px}
-.areas{list-style:none;display:grid;grid-template-columns:1fr 1fr;column-gap:70px}
-.areas li{display:flex;align-items:baseline;gap:18px;padding:22px 0;border-top:1px solid #cfcfcd;font-size:27px;line-height:1.25;transition:padding-left .3s}
+.areas{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:clamp(32px,5vw,100px)}
+.areas li{display:flex;align-items:baseline;gap:18px;padding:22px 0;border-top:1px solid #cfcfcd;font-size:clamp(23px,1.9vw,32px);line-height:1.25;transition:padding-left .3s}
 .areas li::before{content:"";flex:none;width:7px;height:7px;border:1px solid var(--ink);transform:rotate(45deg) translateY(-3px)}
 .areas li:hover{padding-left:12px}
 .areas li:nth-last-child(-n+2){border-bottom:1px solid #cfcfcd}
@@ -71,27 +73,47 @@ a.card:hover dt{color:#bbb}
 .card dt{font-size:14px;letter-spacing:3px;text-transform:uppercase;color:var(--mute);margin-bottom:6px}
 .card dd{font-size:22px;line-height:1.35}
 .card-email dd{font-size:clamp(18px,5.2vw,22px);white-space:nowrap}
+.card-phone dd{white-space:nowrap}
 .office-hours{display:grid;gap:16px;margin-top:12px}
 .office-hours .day{display:block;font-size:17px;font-weight:500;color:var(--mute);margin-bottom:4px}
 .office-hours .time{display:block;font-size:20px;line-height:1.5;white-space:nowrap;font-variant-numeric:tabular-nums}
 footer{border-top:1px solid var(--ink);padding:34px 0 calc(34px + env(safe-area-inset-bottom,0px));font-size:16px;color:var(--mute)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 :focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+@media(max-width:1100px){
+.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.card:nth-child(2){border-right:0}.card:nth-child(-n+2){border-bottom:1px solid var(--line)}}
 @media(max-width:900px){
-.wrap{padding:0 22px}
 nav{display:none}
-.hero-grid{grid-template-columns:1fr;min-height:0;gap:0}
-.hero-text{padding:56px 0 20px}
-.hero-art{justify-content:center;height:360px;margin:0 0 10px}
+.hero-grid{position:relative;isolation:isolate;display:block;min-height:0}
+.hero-text{position:relative;padding:64px 0;max-width:42ch}
+.hero-art{position:absolute;z-index:-1;top:0;right:calc(0px - var(--gutter));bottom:0;width:clamp(160px,38vw,300px);opacity:.65;pointer-events:none}
+.hero-art img{width:100%;height:100%;max-height:none;object-position:right center}
 .stats .wrap{grid-template-columns:1fr 1fr}
 .stats div:nth-child(2){border-right:0}.stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}
 section{padding:68px 0}
 .about-grid{grid-template-columns:1fr;gap:20px}
+.photo{max-width:360px;margin:28px auto 12px}
+.about-grid>div:last-child{width:100%;max-width:60ch;margin-inline:auto}
 .areas{grid-template-columns:1fr}.areas li:nth-last-child(-n+2){border-bottom:0}.areas li:last-child{border-bottom:1px solid #cfcfcd}
-.cards{grid-template-columns:1fr 1fr}.card:nth-child(2){border-right:0}.card:nth-child(-n+2){border-bottom:1px solid var(--line)}
 .brand .mk{font-size:62px}.brand .nm{font-size:26px}.brand .bar{height:54px}header{padding-top:calc(20px + env(safe-area-inset-top,0px));padding-bottom:20px}}
-@media(max-width:640px){.cards{grid-template-columns:1fr}.card{border-right:0;border-bottom:1px solid var(--line)}.card:last-child{border-bottom:0}}
-@media(max-width:520px){.areas li{font-size:23px}}
+@media(max-width:700px){
+.hero-text{padding:48px 0 56px}
+.hero .name{font-size:26px;margin-top:24px}
+.hero-cta{margin-top:28px;gap:12px}
+.btn{min-height:48px;text-align:center;padding:13px 18px;letter-spacing:2px}
+section{padding:52px 0}
+.quote{padding:76px 0}
+.quote cite{font-size:14px;letter-spacing:2px}
+.contact p.in{margin-bottom:32px}
+.cards{grid-template-columns:1fr}
+.card{padding:28px 22px;border-right:0;border-bottom:1px solid var(--line)}
+.card:last-child{border-bottom:0}
+footer .wrap{flex-direction:column;gap:4px}}
+@media(max-width:380px){
+.brand{gap:12px}.brand .mk{font-size:52px}.brand .nm{font-size:23px}.brand .bar{height:46px}
+h1{font-size:34px}
+.hero-cta{flex-direction:column;align-items:stretch}
+.card{padding:26px 18px}}
 @media(prefers-reduced-motion:reduce){.hero-text>*{animation:none;opacity:1;transform:none}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -145,7 +167,7 @@ section{padding:68px 0}
 <p class="in">Z veseljem se dogovorim za sestanek ali pogovor po telefonu.</p>
 <dl class="cards">
 <a class="card card-email" href="mailto:odvetnik.korenjak@t-2.si"><svg viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="1"/><path d="M2.5 6l9.5 7 9.5-7"/></svg><dt>E-pošta</dt><dd>odvetnik.korenjak@t-2.si</dd></a>
-<a class="card" href="tel:+38631234567"><svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v4a2 2 0 01-2 2C10 20 4 14 3 5a2 2 0 012-2z"/></svg><dt>Telefon</dt><dd>03 292 70 10</dd></a>
+<a class="card card-phone" href="tel:+38631234567"><svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v4a2 2 0 01-2 2C10 20 4 14 3 5a2 2 0 012-2z"/></svg><dt>Telefon</dt><dd>03 292 70 10</dd></a>
 <a class="card" href="https://www.google.com/maps/search/?api=1&query=Ulica+XIV.+divizije+12+3000+Celje" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><dt>Naslov</dt><dd>Ulica XIV. divizije 12,<br>3000 Celje</dd></a>
 <div class="card"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><dt>Uradne ure</dt><dd class="office-hours">
 <div><span class="day">Ponedeljek in petek</span><span class="time">9:00 – 12:00</span></div>
